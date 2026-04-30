@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ----------------------------------------------------------------------------
+ * Studio theme tokens — single source of truth.
+ * Tailwind v4 reads from @theme; classes like `bg-shremp-orange`, `text-ink`,
+ * `border-paper` are generated automatically. To rebrand: change the two
+ * shremp-* values below — every accent updates in lockstep.
+ * -------------------------------------------------------------------------- */
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
+  --color-ink: #0a0a0a;
+  --color-paper: #ffffff;
+  --color-shremp-orange: #ff5a1f; /* confident coral-orange — leans warm */
+  --color-shremp-blue: #1a5bff;   /* clean modern blue — counterweight */
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Hairline used to articulate sections — clean modern signature. */
+:root {
+  --hairline: rgba(10, 10, 10, 0.1);
+}
+
+html,
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Selection styled with the studio orange — small, deliberate flicker. */
+::selection {
+  background: var(--color-shremp-orange);
+  color: var(--color-paper);
+}
+
+/* Focus ring uses shremp blue — counterweight to the orange-dominant accents. */
+:focus-visible {
+  outline: 2px solid var(--color-shremp-blue);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Smooth anchor scroll for nav links. */
+html {
+  scroll-behavior: smooth;
 }
