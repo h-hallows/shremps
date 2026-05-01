@@ -1,13 +1,11 @@
 import { BrandCard } from "@/components/BrandCard";
 import { brands } from "@/lib/brands";
-import { SectionLabel, SectionHeading } from "./_shared";
+import { SectionLabel, SectionHeading, SectionDivider } from "./_shared";
 
 export function Brands() {
   return (
-    <section
-      id="brands"
-      className="border-t border-[var(--hairline)] scroll-mt-16"
-    >
+    <section id="brands" className="scroll-mt-16">
+      <SectionDivider />
       <div className="mx-auto max-w-7xl px-6 sm:px-10 py-20 sm:py-28">
         <div className="mb-12 sm:mb-16 max-w-3xl">
           <SectionLabel>// brands</SectionLabel>

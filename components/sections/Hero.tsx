@@ -11,8 +11,27 @@ const SUBHEAD =
 
 export function Hero() {
   return (
-    <section className="relative">
-      <div className="mx-auto max-w-7xl px-6 sm:px-10 pt-20 pb-24 sm:pt-28 sm:pb-36">
+    <section className="relative overflow-hidden">
+      {/*
+        Ambient orange wash — single soft, blurred radial behind the headline.
+        Anchored off-center, sized large, blurred to a glow. Fades up after
+        first paint. The hero's only color moment above the fold.
+      */}
+      <motion.div
+        aria-hidden
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+        className="pointer-events-none absolute -top-[10%] left-[-10%] w-[60vw] h-[60vw] max-w-[820px] max-h-[820px]"
+        style={{
+          background:
+            "radial-gradient(circle at center, var(--color-shremp-orange) 0%, transparent 62%)",
+          filter: "blur(80px)",
+          opacity: 0.18,
+        }}
+      />
+
+      <div className="relative mx-auto max-w-7xl px-6 sm:px-10 pt-20 pb-24 sm:pt-28 sm:pb-36">
         <motion.p
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}

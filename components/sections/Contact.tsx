@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { SectionLabel, SectionHeading } from "./_shared";
+import { SectionLabel, SectionHeading, SectionDivider } from "./_shared";
 
 // ----------------------------------------------------------------------------
 // CONTACT FORM — TWO SUBMIT PATHS, MAILTO ACTIVE BY DEFAULT.
@@ -53,10 +53,8 @@ export function Contact() {
   }
 
   return (
-    <section
-      id="contact"
-      className="border-t border-[var(--hairline)] scroll-mt-16"
-    >
+    <section id="contact" className="scroll-mt-16">
+      <SectionDivider />
       <div className="mx-auto max-w-7xl px-6 sm:px-10 py-20 sm:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5">
@@ -69,7 +67,7 @@ export function Contact() {
             <p className="mt-6 font-mono text-sm text-ink/70">
               <a
                 href={`mailto:${STUDIO_EMAIL}`}
-                className="hover:text-shremp-orange transition-colors"
+                className="link-underline hover:text-shremp-orange transition-colors"
               >
                 {STUDIO_EMAIL}
               </a>

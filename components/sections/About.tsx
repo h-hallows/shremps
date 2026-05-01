@@ -1,12 +1,10 @@
 import { TeamGrid } from "@/components/TeamGrid";
-import { SectionLabel, SectionHeading } from "./_shared";
+import { SectionLabel, SectionHeading, SectionDivider } from "./_shared";
 
 export function About() {
   return (
-    <section
-      id="studio"
-      className="border-t border-[var(--hairline)] scroll-mt-16"
-    >
+    <section id="studio" className="scroll-mt-16">
+      <SectionDivider />
       <div className="mx-auto max-w-7xl px-6 sm:px-10 py-20 sm:py-28">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5">
